@@ -9,14 +9,14 @@ from selenium.webdriver.support import expected_conditions as EC # Con esto pued
 from selenium.webdriver.support.ui import WebDriverWait # Con esto puedo esperar a que un elemento este disponible para poder interactuar con el
 
 # Definir variables globales
-USER = "standard_user" # Usuario por defecto
+USER     = "standard_user" # Usuario por defecto
 PASSWORD = "secret_sauce" # Contraseña por defecto
-URL = "https://www.saucedemo.com" # URL por defecto
+URL      = "https://www.saucedemo.com" # URL por defecto
 
 # Definicimos la funcion main, que es la que se va a ejecutar al correr el programa
 def main():
     service = Service(ChromeDriverManager().install())
-    options  = webdriver.ChromeOptions() # Con esto puedo darle algunos parametros a mi navegador, como lo es automizar en un segundo plano
+    options = webdriver.ChromeOptions() # Con esto puedo darle algunos parametros a mi navegador, como lo es automizar en un segundo plano
     # Agrego opciones para omitir un error que ocurría al momento que se abría una pestaña emergente que interrumpía las opciones de clics
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--disable-infobars")
@@ -57,7 +57,7 @@ def main():
         continue_button    = driver.find_element(By.ID, "continue").click() #
         
         # Por ultimo se selecciona el boton FINISH
-        finish_button    = driver.find_element(By.ID, "finish").click()
+        finish_button      = driver.find_element(By.ID, "finish").click()
     except Exception as e:
         print("❌ Ocurrió un error durante la automatización:")
         print(f"Error: {e}")
